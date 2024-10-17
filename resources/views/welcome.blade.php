@@ -1,8 +1,10 @@
 
-
 <x-app-layout>
     <div>
-        <button type="button" class="btn btn-outline-secondary">Create you blog</button>
+
+        <a href="{{route('create.post')}}">
+            <button type="button" class="btn btn-outline-secondary">Create you blog</button>
+        </a>
       
     </div>
 

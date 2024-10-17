@@ -24,9 +24,12 @@
 
     <div class="container">
        @include('layouts/navigation')
+        {{-- <a href="{{route('create.post')}}">
+            <button type="button" class="btn btn-outline-secondary">Create you blog</button>
+        </a> --}}
         
        {{ $slot }}
-       
+
     </div>
 
 

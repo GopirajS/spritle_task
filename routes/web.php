@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route::middleware(['auth'])->group(function(){
+
+    Route::get('form',[PostController::class,'createPost'])->name('create.post');
+    Route::get('save-post',[PostController::class,'createPost'])->name('create.post');
+    Route::get('update-post',[PostController::class,'createPost'])->name('create.post');
+
+// });
 
 
 require __DIR__.'/auth.php';
