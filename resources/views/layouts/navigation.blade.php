@@ -32,6 +32,10 @@
             </svg>
         </a>
     </div>
+
+        <h3>
+        what I did interesting today
+        </h3>
     <div>
         @if (Route::has('login'))
             <div class="hidden  top-0 right-0 px-6 py-4 sm:block">

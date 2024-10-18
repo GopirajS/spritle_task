@@ -38,7 +38,7 @@
         var simplemde = new SimpleMDE({
             element: document.getElementById('post'),
             toolbar: [
-                "bold", "italic", "strikethrough", "|", "code", "unordered-list", "ordered-list",
+                "bold", "italic", "strikethrough", "|", "code", "unordered-list", "ordered-list", "link",
                 "|", "table", "|", "preview"
             ]
         });

@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="q12gcE53zlZm7avVYxgBCvBNr5nagb5GuU6ESJB7">
     
-        <title>Laravel</title>
+        <title>SPRITLE</title>
     
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&amp;display=swap">
     

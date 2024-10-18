@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
 
 
-    $getAllPost = Post::all();
+    $getAllPost = Post::orderBy('id','desc')->get();
     return view('welcome',['getAllPost'=>$getAllPost]);
 })->name('welcome');
 
@@ -27,7 +27,6 @@ Route::middleware(['auth'])->group(function(){
     Route::get('form',[PostController::class,'createPost'])->name('create.post');
     Route::post('save-post',[PostController::class,'savePost'])->name('save.post');
     Route::post('update-post',[PostController::class,'updatePost'])->name('update.post');
-
     
     Route::post('/post/{post}/comment', [PostController::class, 'storeComment'])->name('post.comment');
     Route::post('/post/{post}/like', [PostController::class, 'likePost'])->name('post.like');

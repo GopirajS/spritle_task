@@ -1,8 +1,11 @@
 <x-app-layout>
     <div class="w-75 mx-auto">
+
+        @auth
         <a class="" href="{{ route('create.post') }}">
             <button type="button" class="btn btn-outline-secondary">Create your blog</button>
         </a>
+        @endauth
       
         @foreach ($getAllPost as $item)
             <div class="card mt-2 mb-5 shadow-sm">
@@ -27,17 +30,22 @@
                         </span>
 
                         <div class="d-flex align-items-center">
+                            @auth
                             <button class="btn btn-outline-danger like-button" data-post-id="{{ $item->id }}">
                                 <i class="fa {{ auth()->user() && $item->likes->where('user_id', auth()->id())->count() ? 'fa-heart' : 'fa-heart-o' }}"></i>
                             </button>
+                            @endauth
+                            
                             <span class="ml-2">{{ $item->likes->count() }} </span>  <span class="p-2" >Likes</span>
                         </div>
                        
                         
                     </div>
 
-                    <!-- Comments Section -->
-                    <div class="mt-3 border-top pt-2">
+                   
+                    @auth
+                     <!-- Comments Section -->
+                     <div class="mt-3 border-top pt-2">
                         <h6>Comments:</h6>
                         @if ($item->comments->isEmpty())
                             <p class="text-muted">No comments yet. Be the first to comment!</p>
@@ -62,15 +70,15 @@
                             @endforeach
                         @endif
                     </div>
-
-                    <!-- Comment Form -->
-                    <form action="{{ route('post.comment', $item->id) }}" method="POST" class="mt-3">
+                     <form action="{{ route('post.comment', $item->id) }}" method="POST" class="mt-3">
                         @csrf
                         <div class="form-group">
                             <textarea name="comment" class="form-control" rows="2" placeholder="Write a comment..."></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-sm mt-2">Post Comment</button>
                     </form>
+                    @endauth
+                   
                 </div>
             </div>
         @endforeach
