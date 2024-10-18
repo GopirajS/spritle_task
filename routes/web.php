@@ -16,15 +16,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
-// Route::middleware(['auth'])->group(function(){
+Route::middleware(['auth'])->group(function(){
 
     Route::get('form',[PostController::class,'createPost'])->name('create.post');
-    Route::get('save-post',[PostController::class,'createPost'])->name('create.post');
-    Route::get('update-post',[PostController::class,'createPost'])->name('create.post');
+    Route::post('save-post',[PostController::class,'savePost'])->name('save.post');
+    Route::post('update-post',[PostController::class,'updatePost'])->name('update.post');
 
-// });
+});
 
 
 require __DIR__.'/auth.php';
