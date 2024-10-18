@@ -28,6 +28,11 @@ Route::middleware(['auth'])->group(function(){
     Route::post('save-post',[PostController::class,'savePost'])->name('save.post');
     Route::post('update-post',[PostController::class,'updatePost'])->name('update.post');
 
+    
+    Route::post('/post/{post}/comment', [PostController::class, 'storeComment'])->name('post.comment');
+    Route::post('/post/{post}/like', [PostController::class, 'likePost'])->name('post.like');
+
+
 });
 
 
