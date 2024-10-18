@@ -60,14 +60,21 @@ class PostController extends Controller
 
             if ($like) {
                 $like->delete();
+                $response['success'] = false;
+                $response['message'] = 'Like Removed successfully';
             } else {
                 $postLike =new PostLike;
                 $postLike->post_id = $post->id;
                 $postLike->user_id = auth()->id();
                 $postLike->save();
-    
+                $response['success'] = true;
+                $response['message'] = 'Like given successfully';
             }
 
-            return response()->json(['success' => true]);
+           
+           
+          
+
+            return response()->json($response);
         }
 }

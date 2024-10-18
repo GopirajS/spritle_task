@@ -31,6 +31,11 @@
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+  <!-- Add this in your <head> tag -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-DyZv9TQUpJcGqgAZ8+Fb6P5Fk22gHU5Gm6oIX0lZ8n0FSY9Gfms1SYdD5O0YI5bD" crossorigin="anonymous">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
 
     </head>
 
